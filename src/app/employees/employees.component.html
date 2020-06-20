@@ -1,0 +1,83 @@
+<nav id="nav" class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#" style="color: snow" id="hhh">Trainee Details</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button type="button" class="btn btn-warning ml-auto" routerLink="/"><i class="fa fa-arrow-left"></i> &nbsp; BACK</button>
+</nav>
+
+<body>
+<!-- trainee details form --> 
+        <form [formGroup]="userForm"  (ngSubmit)="submitclick()">
+                <h3>Enter Trainee Details</h3>
+                    <fieldset>
+                      <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><i class="fa fa-user"></i> &nbsp; First Name</label>
+                            <input type="text" name="n1" formControlName="namefc" class="form-control" id="exampleInputName1" placeholder="First Name..">
+                            <span class="help-block" *ngIf="userForm.get('namefc').errors">
+                            <!--Input first name validation -->
+                            <div class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('namefc').errors.required  && (userForm.get('namefc').touched || userForm.get('namefc').dirty)">First Name is required</div>
+                            <div class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('namefc').errors.minlength || userForm.get('namefc').errors.maxlength && (userForm.get('namefc').touched || userForm.get('namefc').dirty)">Please enter 3 to 12 characters</div>
+                            <div  class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('namefc').errors.pattern">Only alphabets allowed</div>    
+                        </span>
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleInputPassword1"><i class="fa fa-user"></i> &nbsp; Last Name</label>
+                                <input type="text" formControlName="lnamefc" class="form-control" id="exampleInputName1" placeholder="Last Name..">
+                                <span class="help-block" *ngIf="userForm.get('lnamefc').errors">
+                            <!--Input last name validation -->
+                                <div class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('lnamefc').errors.required  && (userForm.get('lnamefc').touched || userForm.get('lnamefc').dirty)">Last Name is required</div>
+                                <div class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('lnamefc').errors.minlength || userForm.get('lnamefc').errors.maxlength && (userForm.get('lnamefc').touched || userForm.get('lnamefc').dirty)">Please enter 3 to 12 characters</div>
+                                <div  class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('lnamefc').errors.pattern">Only alphabets allowed</div>    
+                            </span>
+                            </div>
+                        <div class="form-group">
+                            <!-- Input Phone number validation -->
+                            <label for="exampleInputPassword1"><i class="fa fa-phone"></i> &nbsp; Phone Number</label>
+                            <input type="number" formControlName="phonefc" class="form-control" id="exampleInputPhone1" placeholder="Phone Number..">
+                            <div class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('phonefc').errors && (userForm.get('phonefc').touched || userForm.get('phonefc').dirty)">10 digits required (Should start with 7-9)</div>
+                        </div>
+                        <div class="form-group">
+                            <!--Input email id validation -->
+                        <label for="exampleInputEmail1"><i class="fa fa-envelope"></i> &nbsp; Email address</label>
+                        <input type="email" formControlName="emailfc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <div class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('emailfc').errors && (userForm.get('emailfc').touched || userForm.get('emailfc').dirty)">Please enter valid email! </div>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid"><i class="fa fa-check"></i> &nbsp; Submit</button>
+                    </div>
+                      
+                    </fieldset>
+            </form>
+    
+
+</body>
+
+<!-- 
+<form [formGroup]="userForm" id="frm">
+        <h3>Enter Trainee Details</h3>
+        <fieldset>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">ID/Sr. Number</label>
+                    <input type="number" formControlName="idfc" class="form-control" id="exampleInputId1" placeholder="ID.." [(ngModel)]="ID">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Name(First Name + Last Name)</label>
+                    <input type="text" formControlName="namefc" class="form-control" id="exampleInputName1" placeholder="Name.." [(ngModel)]="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Phone Number</label>
+                    <input type="number" formControlName="phonefc" class="form-control" id="exampleInputPhone1" placeholder="Phone Number.." [(ngModel)]="Phone">
+                </div>
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" formControlName="emailfc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email" [(ngModel)]="Email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <button class="btn btn-info" routerLink="/" (click)="submitclick()">Submit</button>
+        </fieldset>
+    </form> -->

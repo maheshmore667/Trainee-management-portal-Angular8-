@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg" id="nav">
+    <a class="navbar-brand" href="#" style="color: snow">Trainee Details</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button type="button" class="btn btn-warning ml-auto" routerLink="/"><i class="fa fa-arrow-left"></i> &nbsp; BACK</button>
+</nav>
+<!-- trainee details -->
+<body>
+    <div id="alrt" class="container p-3">
+        <h4 align=center>{{temp.name}} {{temp.lname}} </h4>
+        <p align=center>Your details have been displayed below:</p>
+        <table class="table">
+                <tr>
+                    <th scope="col">Serial Number</th>
+                    <td>:</td>
+                    <td scope="row">{{temp.id}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <td>:</td>
+                    <td scope="row">{{temp.name}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Last Name</th>
+                    <td>:</td>
+                    <td scope="row">{{temp.lastName}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">E-mail</th>
+                    <td>:</td>
+                    <td scope="row">{{temp.email}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Phone-Number</th>
+                    <td>:</td>
+                    <td scope="row">{{temp.phone}}</td>
+                </tr>
+        </table>
+    </div>
+
+</body>

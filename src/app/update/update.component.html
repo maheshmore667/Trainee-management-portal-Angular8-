@@ -1,0 +1,49 @@
+<nav id="nav" class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#" style="color: snow" id="hhh">Update Trainee Details</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button type="button" class="btn btn-warning ml-auto" routerLink="/"><i class="fa fa-arrow-left"></i> &nbsp; BACK</button>
+</nav>
+<!-- trainee details update form -->
+<body>
+        <form  [formGroup]="userForm">
+                <h3>Update Trainee Details</h3>
+                    <fieldset>
+                      <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><i class="fa fa-user"></i> &nbsp; First Name</label>
+                            <input type="text" formControlName="namefc" class="form-control" id="exampleInputName1" placeholder="Name.." [(ngModel)]="Name">
+                            <span class="help-block" *ngIf="userForm.get('namefc').errors">
+                            <div class="bg-danger w-100 text-primary p-1"  *ngIf="userForm.get('namefc').errors.required">First Name is required</div>
+                            <div class="bg-danger w-100 text-primary p-1"  *ngIf="userForm.get('namefc').errors.minlength || userForm.get('namefc').errors.maxlength">Please enter 3 to 10 characters </div>
+                            <div  class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('namefc').errors.pattern">Only alphabets allowed</div>   
+                        </span>
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleInputPassword1"><i class="fa fa-user"></i> &nbsp; Last Name</label>
+                                <input type="text" formControlName="lnamefc" class="form-control" id="exampleInputName1" placeholder="Name.." [(ngModel)]="LName">
+                                <span class="help-block" *ngIf="userForm.get('lnamefc').errors">
+                                <div class="bg-danger w-100 text-primary p-1"  *ngIf="userForm.get('lnamefc').errors.required">Last Name is required</div>
+                                <div class="bg-danger w-100 text-primary p-1"  *ngIf="userForm.get('lnamefc').errors.minlength || userForm.get('lnamefc').errors.maxlength">Please enter 3 to 10 characters </div>
+                                <div  class="bg-danger w-100 text-primary p-1" *ngIf="userForm.get('lnamefc').errors.pattern">Only alphabets allowed</div>    
+                            </span>
+                            </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><i class="fa fa-phone"></i> &nbsp;  Phone Number</label>
+                            <input type="number" formControlName="phonefc" class="form-control" id="exampleInputPhone1" placeholder="Phone Number.." [(ngModel)]="Phone">
+                            <div class="bg-danger w-100 text-primary p-1"  *ngIf="userForm.get('phonefc').errors">10 digits required</div>
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleInputEmail1"><i class="fa fa-envelope"></i> &nbsp; Email address</label>
+                        <input type="email" formControlName="emailfc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="Email">
+                        <div class="bg-danger w-100 text-primary p-1"  *ngIf="userForm.get('emailfc').errors">Please enter valid email </div>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                    </div>
+                      <button (click)="updateclick()" class="btn btn-primary" [disabled]="!userForm.valid">Update</button>
+                    </fieldset>
+            </form>
+
+</body>

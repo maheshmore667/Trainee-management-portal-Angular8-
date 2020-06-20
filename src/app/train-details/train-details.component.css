@@ -1,0 +1,19 @@
+table{
+    border: 2px solid rgba(128, 128, 128, 0.4);
+    width: 100%;
+}
+tr{
+    color: black;
+    font: caption;
+    font-weight: 600;
+}
+th{
+    font:caption;
+}
+#nav{
+    background-color: rgb(78, 122, 115);
+}
+#alrt{
+    background-color: rgba(128, 128, 128, 0.2);
+    box-shadow: 0 8px 16px 0 rgb(122, 122, 122);
+}

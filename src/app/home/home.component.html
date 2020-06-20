@@ -1,0 +1,66 @@
+
+<title>
+    <head>
+      <!-- favicon -->
+        <link rel="shortcut icon" type="image/jpg" href="C:\Users\799211\Desktop\Angular Training\Assessment\src\assets\favicon.jpg"/>
+        <link rel="shortcut icon" type="image/jpg" href="C:\Users\799211\Desktop\Angular Training\Assessment\src\assets\favicon.jpg"/>
+        
+    </head> 
+    </title>
+    <!-- navigation -->
+    <div id="topnav">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#" style="color: white"  id="hhh"><i class="fa fa-home"></i> &nbsp; Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+          aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <button id="addB" routerLink="/add" class="btn btn-warning"><i class="fa fa-plus"></i> &nbsp; Add Employee</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+      <div id="searchBar">
+        <form class="form-inline">
+          <h5 class="pt-3 pr-2"><i class="fa fa-search"></i> &nbsp;Search</h5>
+          <input id="searchB" type="text" [(ngModel)]="nameSearch" [ngModelOptions]="{standalone: true}" [disabled]=flag>
+        </form>
+      </div>  
+    
+    
+      <div id="tabl" *ngIf="(emps|namesearch:nameSearch) as emps">
+        <div *ngIf="emps.length">
+          <table id="tbl" class="table" border="1">
+            <tr>
+              <th><i class="fa fa-key"></i> &nbsp; Sr. No.</th>
+              <!-- <th>ID</th> -->
+              <th><i class="fa fa-user"></i> &nbsp; First Name</th>
+              <th><i class="fa fa-user"></i> &nbsp; Last Name</th>
+              <th><i class="fa fa-envelope"></i> &nbsp; E-mail</th>
+              <th><i class="fa fa-phone"></i> &nbsp; Phone No.</th>
+              <th><i class="fa fa-pencil"></i> &nbsp; Update</th>
+              <th><i class="fa fa-user-times"></i> &nbsp; Delete</th>
+            </tr>
+            <tr *ngFor="let e of emps, let i = index" appHighlight>
+              <td class="tp" (click)="displayTrain(e)">{{i+1}}</td>
+              <!-- <td (click)="displayTrain(e)">{{e.id}}</td> -->
+              <td class="tp" (click)="displayTrain(e)">{{e.name |titlecase}}</td>
+              <td class="tp" (click)="displayTrain(e)">{{e.lastName |titlecase}}</td>
+              <td class="tp" (click)="displayTrain(e)">{{e.email}}</td>
+              <td class="tp" (click)="displayTrain(e)">{{e.phone |phonenumber:e.phone}}</td>
+              <td><button class="btn btn-info" (click)="updateRecord(e)">Update</button></td>
+              <td><button class="btn btn-danger" (click)="deleteRecord(e)">Delete</button></td>
+            </tr>
+          </table>
+        </div>
+        <!-- all records deleted-->
+        <div *ngIf="!emps.length">
+          Trainee NOT Found
+        </div>
+      </div>
+    </div>

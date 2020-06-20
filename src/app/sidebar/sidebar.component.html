@@ -1,0 +1,18 @@
+
+<!-- Side Bar -->
+<body>
+
+    <!-- Sidebar Links -->
+   <div class="sidenav">
+           <img src="../../../assets/logo.png" alt="">
+           <a class="active" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-users"></i> &nbsp; Trainee List</a>
+           <a routerLinkActive="active" routerLink="/add"><i class="fa fa-user-plus"></i> &nbsp; Add New Trainee</a>
+           <a (click)="logout()"><i class="fa fa-sign-out"></i> &nbsp; Logout</a>
+   </div>
+
+   <!-- Load main contents -->
+   <div class="main">
+           <router-outlet></router-outlet>
+   </div>         
+                   
+</body>

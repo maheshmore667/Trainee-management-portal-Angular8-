@@ -1,0 +1,84 @@
+#topnav{
+    overflow: auto;
+    width: 100%;
+    float: right;
+}
+nav{
+  background-color: lightseagreen;
+}
+#searchBar{ 
+  padding-top: 5%;
+  padding-left: 30%;
+}
+#searchB{
+  height: 50px;
+  width: 250px;
+  border-radius: 15px;
+  border: 2px solid;
+}
+#searchTextbox{
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+li a{
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 15px;
+    background-color: rgb(170, 255, 0, 0.1);
+    transition: 0.2s;
+}
+li a:hover{
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 15px;
+    background-color: lightseagreen;
+    transition: 0.2s;
+}
+
+#tbl{
+  text-align: center;
+  width: 90%;
+  margin-right: 0px;
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+  /* box-shadow: 5px 5px 40px 10px rgba(0, 0, 0, 0.1); */
+}
+th{ 
+  padding: 20px;
+  height: 60px;
+  font: bolder;
+  font-size: 15px;
+  border-bottom: 5px solid rgba(128, 128, 128, 0.2);
+  color: black;
+  background-color: lightseagreen;
+}
+td{
+  font-size: 15px;
+  padding: 5px;
+  border-bottom: 5px solid rgba(128, 128, 128, 0.3);
+  color: black;
+}
+tr:hover{
+  background-color: lightseagreen;
+}
+button{
+  border-radius: 15px;
+  color: white;
+}
+.container{
+  margin-top: 5%;
+}
+#hhh{
+  width: 80%;
+  pointer-events: none;
+}
+#navbarColor01{
+  position: sticky;
+}
+#tabl{
+  padding-top: 5%;
+}
+.tp{
+  padding-top: 20px;
+}
